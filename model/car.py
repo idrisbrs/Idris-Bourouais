@@ -17,12 +17,13 @@ class Car:
     def accelerate(self) -> None:
         self.speed += CAR_ACCELERATION
 
-    #def brake(self) -> None:
-    #    while self.speed != 0.0 :
-     #       if self.speed>0:
-      #          self.speed -= CAR_ACCELERATION
-       #         else 
-        #        self.speed += CAR_ACCELERATION
+    def brake(self) -> None:
+            if self.speed>0:
+                self.speed -= CAR_ACCELERATION
+            elif self.speed<0:
+                self.speed += CAR_ACCELERATION
+            else :
+                self.speed=0.0
                 
 
     def reverse(self) ->None:
