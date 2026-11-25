@@ -2,7 +2,7 @@ import pygame
 
 
 MAPPING = {
-    pygame.K_UP:     "accelerate",
+    pygame.K_UP:     "accelerate", pygame.K_DOWN:     "reverse"
 }
 
 

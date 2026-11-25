@@ -17,6 +17,17 @@ class Car:
     def accelerate(self) -> None:
         self.speed += CAR_ACCELERATION
 
+    #def brake(self) -> None:
+    #    while self.speed != 0.0 :
+     #       if self.speed>0:
+      #          self.speed -= CAR_ACCELERATION
+       #         else 
+        #        self.speed += CAR_ACCELERATION
+                
+
+    def reverse(self) ->None:
+        self.speed -= CAR_ACCELERATION
+
     def update_position(self) -> None:
         self.y += self.speed
 
