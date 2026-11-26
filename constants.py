@@ -9,7 +9,7 @@ GRID_ROWS = 12
 CAR_ACCELERATION = 0.05
 CAR_WIDTH = 30
 CAR_HEIGHT = 50
-
+CAR_ROTATION = 0.02
 
 class GameState:
     MENU = "menu"

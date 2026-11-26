@@ -2,7 +2,8 @@ import pygame
 
 
 MAPPING = {
-    pygame.K_UP:     "accelerate", pygame.K_DOWN:     "reverse", pygame.K_b: "brake"
+    pygame.K_UP:     "accelerate", pygame.K_DOWN:     "reverse", pygame.K_b: "brake", pygame.K_LEFT: "turn_left",
+    pygame.K_RIGHT:"turn_right"
 }
 
 

@@ -1,7 +1,7 @@
 import pygame
 import math
 from constants import (
-    CAR_ACCELERATION, CAR_WIDTH, CAR_HEIGHT, TILE_SIZE
+    CAR_ACCELERATION, CAR_WIDTH, CAR_HEIGHT, TILE_SIZE, CAR_ROTATION
 )
 
 
@@ -28,9 +28,12 @@ class Car:
 
     def reverse(self) ->None:
         self.speed -= CAR_ACCELERATION
+    def turn_left(self) ->None:
+        self.angle += CAR_ROTATION
 
     def update_position(self) -> None:
         self.y += self.speed
+        self.x += self.angle
 
     def build_sprite(self) -> pygame.Surface:
         surf = pygame.Surface((CAR_WIDTH, CAR_HEIGHT), pygame.SRCALPHA)

@@ -64,6 +64,8 @@ class GameController:
             car.reverse()
         elif player_input['brake']:
             car.brake()
+        elif player_input['turn_left']:
+            car.turn_left()
 
     def render(self) -> None:
         self.view.draw(self.model)
