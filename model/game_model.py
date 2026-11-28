@@ -9,7 +9,8 @@ class GameModel:
     def __init__(self):
         self.state: str = GameState.MENU
         self.circuit: Circuit | None = None
-        self.car: Car | None = None
+        self.car1: Car | None = None
+        self.car2: Car | None = None
 
     def load_circuit(self) -> None:
         grid = [[RoadTile(col=col_idx, row=row_idx)
@@ -18,9 +19,11 @@ class GameModel:
         self.spawn_car()
 
     def spawn_car(self) -> None:
-        self.car = Car(7, 1)
+        self.car1 = Car(7, 1, color=(255, 0, 0))    # Voiture 1 (Rouge)
+        self.car2 = Car(8, 1, color=(0, 120, 255))  # Voiture 2 (Bleue
 
     def update(self) -> None:
         if self.state != GameState.RACING or self.circuit is None:
             return
-        self.car.update_position()
+        self.car1.update_position()
+        self.car2.update_position()

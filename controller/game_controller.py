@@ -52,9 +52,15 @@ class GameController:
         if self.model.state != GameState.RACING:
             return
 
-        p1_input = self.input_handler.get_inputs()
-        car = self.model.car
-        self.apply_input(car, p1_input)
+    def update(self) -> None:
+        if self.model.state != GameState.RACING:
+            return
+
+        p1_input = self.input_handler.get_inputs(self.input_handler.mapping_p1)
+        p2_input = self.input_handler.get_inputs(self.input_handler.mapping_p2)
+
+        self.apply_input(self.model.car1, p1_input)
+        self.apply_input(self.model.car2, p2_input)
         self.model.update()
 
     def apply_input(self, car, player_input) -> None:
@@ -64,9 +70,10 @@ class GameController:
             car.reverse()
         elif player_input['brake']:
             car.brake()
-        elif player_input['turn_left']:
+        if player_input['turn_left']:
             car.turn_left()
-
+        elif player_input['turn_right']:
+            car.turn_right()
     def render(self) -> None:
         self.view.draw(self.model)
 
